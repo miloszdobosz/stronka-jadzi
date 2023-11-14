@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en_US">
+
+<head>
+    <title>Jadwiga Ligęza</title>
+    <style>
+        #bike {
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            /* display: flow-root; */
+        }
+
+        .girl {
+            /* width: 1574px;
+            height: 1683px; */
+            /* width: 393.5px;
+            height: 420.75px; */
+            min-width: 15.74vw;
+            min-height: 16.83vw;
+            background-position-x: 0;
+            background-position-y: top;
+            position: absolute;
+            top: 10%;
+            left: 38%;
+            background-size: 2300%;
+            margin: auto;
+        }
+
+        #girl_front {
+            background-image: url("./resources/bike/bike_front.png");
+        }
+
+        #girl_back {
+            background-image: url("./resources/bike/bike_back.png");
+        }
+
+        .wheel {
+            width: 280px;
+            height: 280px;
+            background-position-x: 0;
+            background-position-y: top;
+            position: absolute;
+            /* left: 50%; */
+            top: 37%;
+            background-size: 100%;
+            margin: auto;
+            /* transition: scale 0.1s; */
+        }
+
+        .wheel:hover {
+            scale: 103%;
+        }
+        
+        .wheel:active {
+            scale: 98%;
+        }
+
+        #wheel_left {
+            background-image: url("./resources/bike/wheel_illustration.png");
+            left: 32%;
+        }
+
+        #wheel_right {
+            background-image: url("./resources/bike/wheel_animation.png");
+            left: 49%;
+        }
+
+        #dlugie {
+            background-image: url("./bike_stripe.png");
+            background-size: 150%;
+
+            min-width: 500vw;
+            min-height: 50vh;
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4ch; */
+        }
+
+        #scroll {
+            overflow-x: hidden;
+            display: flex;
+            position: relative;
+            top: 73vh;
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            /* background-color: rgb(170, 146, 156); */
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            min-width: 48vh;
+            min-height: 27vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4ch;
+        }
+
+        section:nth-child(even) {
+            background-color: teal;
+            color: white;
+        }
+
+
+        .link {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 999;
+            color: #000;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: arial;
+            text-decoration: none;
+            box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px -15px;
+        }
+
+        .link:hover {
+            background: #d5d5d5;
+            box-shadow: rgb(50 50 93 / 25%) 0 0 100px -20px, rgb(0 0 0 / 30%) 0 0 60px 0px;
+        }
+
+        iframe[sandbox] .read-article {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bike" position="relative">
+        <div class="girl" , id="girl_back"></div>
+        <div class="wheel" , id="wheel_left"></div>
+        <div class="wheel" , id="wheel_right"></div>
+        <div class="girl" , id="girl_front"></div>
+    </div>
+
+    <div id="scroll">
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>Beep</h1>
+        </section>
+        <section>
+            <h1>Boop</h1>
+        </section>
+        <section>
+            <h1>Boooom</h1>
+        </section>
+        <section>
+            <h1>The End</h1>
+        </section>
+
+        <!-- <div id="dlugie"></div> -->
+    </div>
+    </div>
+    <div id="about"></div>
+    <div id="illustrations"></div>
+    <div id="animations"></div>
+
+    <a href="https://instagram.com/jadwitchka" target="_blank" class="link">
+        👉 My instagram
+    </a>
+</body>
+
+<script>
+    const scrollContainer = document.getElementById("scroll");
+    const girl_front = document.getElementById("girl_front");
+    const girl_back = document.getElementById("girl_back");
+    const wheel_left = document.getElementById("wheel_left");
+    const wheel_right = document.getElementById("wheel_right");
+
+    const animWidth = girl_front.getBoundingClientRect().width;
+    let accurateScrollLeft = 0;
+
+    document.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        accurateScrollLeft += event.deltaY;
+        scrollContainer.scrollLeft = accurateScrollLeft;
+        girl_front.style.backgroundPositionX = Math.floor(-accurateScrollLeft / 100) * animWidth + "px";
+        girl_back.style.backgroundPositionX = Math.floor(-accurateScrollLeft / 100) * animWidth + "px";
+        wheel_left.style.rotate = accurateScrollLeft / 5 + "deg";
+        wheel_right.style.rotate = accurateScrollLeft / 5 + "deg";
+    });
+</script>
+
+</html>
