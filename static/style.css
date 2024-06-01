@@ -1,25 +1,26 @@
-#bike {
-    margin: auto;
-    align-items: center;
+#bike-container {
+    display: flex;
     justify-content: center;
-    /* display: flow-root; */
+    align-items: center;
+    height: 100vh;
+}
+
+#bike {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 10/8;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .girl {
-    /* width: 1574px;
-    height: 1683px; */
-    /* width: 393.5px;
-    height: 420.75px; */
-    min-width: 15.74vw;
-    min-height: 16.83vw;
-    background-position-x: 0;
-    background-position-y: top;
+    width: 60%;
+    aspect-ratio: 1574/1683;
     position: absolute;
-    top: 10%;
-    left: 38%;
+    top: 0;
     background-size: 600%;
-    /* background-size: 100%; */
-    margin: auto;
 }
 
 #girl_front {
@@ -31,16 +32,12 @@
 }
 
 .wheel {
-    width: 280px;
-    height: 280px;
-    background-position-x: 0;
-    background-position-y: top;
+    width: 45%;
+    aspect-ratio: 1/1;
     position: absolute;
-    /* left: 50%; */
-    top: 37%;
     background-size: 100%;
-    margin: auto;
-    /* transition: scale 0.1s; */
+    bottom: 0;
+    transition: scale 0.1s;
 }
 
 .wheel:hover {
@@ -53,12 +50,12 @@
 
 #wheel_left {
     background-image: url("_media/bike/wheel_illustration.webp");
-    left: 32%;
+    left: 0;
 }
 
 #wheel_right {
     background-image: url("_media/bike/wheel_animation.webp");
-    left: 49%;
+    right: 0;
 }
 
 #dlugie {

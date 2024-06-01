@@ -3,13 +3,14 @@ const girl_back = document.getElementById("girl_back");
 const wheel_left = document.getElementById("wheel_left");
 const wheel_right = document.getElementById("wheel_right");
 
-const animWidth = girl_front.getBoundingClientRect().width;
-const animHeight = girl_front.getBoundingClientRect().height;
 
 let accurateScrollLeft = 0;
 let x, y, positionX, positionY;
 
 document.addEventListener("wheel", (event) => {
+    let animWidth = girl_front.getBoundingClientRect().width;
+    let animHeight = girl_front.getBoundingClientRect().height;
+
     event.preventDefault();
     accurateScrollLeft += event.deltaY;
 
