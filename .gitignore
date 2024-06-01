@@ -1,0 +1,17 @@
+# Hugo build files
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Optional IDE files
+.vscode/
+.idea/
+
+# Logs and databases
+*.log
+
+# Hugo environment variables
+.env
+
+# Own scripts
+*.sh

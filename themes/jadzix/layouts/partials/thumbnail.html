@@ -1,0 +1,5 @@
+<!-- <img src="{{ .Params.image | absURL }}" alt="" class="img-responsive"> -->
+
+{{ with .Resources.Get (path.Join "images" .Params.image) }}
+    <img src="{{ .RelPermalink }}" alt="" class="img-responsive">
+{{ end }}

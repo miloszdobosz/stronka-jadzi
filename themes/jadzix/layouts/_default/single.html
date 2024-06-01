@@ -1,0 +1,35 @@
+<head>
+    <style>
+        .horizontal {
+            display: flex;
+            max-width: 100%;
+            flex-shrink: 2;
+        }
+
+        .media {
+            max-width: 50%;
+        }
+
+        .media-chunk {
+            width: 95%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project horizontal">
+        <div class="media">
+            {{ range .Resources.Match "images/*" }}
+                <img src="{{ .Permalink }}" class="media-chunk">
+            {{ end }}
+        </div>
+        <section class="project-description">
+            {{ .Content }}
+        </section>
+    </div>
+</body>
