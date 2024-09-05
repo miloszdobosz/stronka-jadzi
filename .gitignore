@@ -15,3 +15,5 @@
 
 # Own scripts
 *.sh
+
+.direnv/
